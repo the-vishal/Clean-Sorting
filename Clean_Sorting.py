@@ -2,6 +2,7 @@
 # Sorting files in a directory according to their extensions.
 import sys
 import re
+import os
 from tkinter import*
 import tkinter.filedialog
 import tkinter.messagebox
