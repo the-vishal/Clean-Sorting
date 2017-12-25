@@ -1,8 +1,8 @@
 #28/8/17
-# Sorting files in a directory according to their extensions, P.S : Their must be no spacing in between name spaces.
-import os
+# Sorting files in a directory according to their extensions.
 import sys
 import re
+import os
 from tkinter import*
 import tkinter.filedialog
 import tkinter.messagebox
@@ -11,16 +11,16 @@ root = Tk()
 root.withdraw()
 temp_file = tkinter.filedialog.askdirectory(parent= root, initialdir =os.getcwd(),title="Select Folder to "
                                                                                         "be Cleanly Sorted")
-#print(temp_file)
+print(temp_file)
 path = temp_file+"/"#Your path here
-#print(path)
+print(path)
 files = os.listdir(path)
-#print(os.listdir(path))
+print(os.listdir(path))
 
 ext = []
 
 for k in files:
-
+     print(k)
      file_ext = os.path.splitext(k)[1]
      #print(file_ext)
      pattern = r'([\w]+)'
@@ -31,8 +31,12 @@ for k in files:
       #print(file_ext)
       if not os.path.exists(path1):
          os.mkdir(path1)
+
+      #print(path1)
       os.chdir(path)
-      os.system("move "+'"'+k+'"'+" "+path1)#double quote embed in single colon
+      cmd = ' "'+k+'" '
+
+      os.system("move "+cmd+'"'+path1+'"')#double quote embed in single colon
       ext.append(folder_name)
 
 if len(temp_file) > 0:
