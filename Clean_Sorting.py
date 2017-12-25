@@ -32,7 +32,7 @@ for k in files:
       if not os.path.exists(path1):
          os.mkdir(path1)
       os.chdir(path)
-      os.system("move "+'"'+k+'"'+" "+path1)#double quote embed in single colon
+      os.system("move "+'"'+k+'"'+" "+'"'+path1+'"')#double quote embed in single colon
       ext.append(folder_name)
 
 if len(temp_file) > 0:
